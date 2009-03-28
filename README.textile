@@ -2,7 +2,7 @@ h1. In Place Rich Editor
 
 AJAX In Place Rich Editor: In place AJAX-powered WYSIWYG editor
 
-Using the great libraries Prototype 1.6, Script.Aculo.Us 1.8 and TinyMCE 3.0, IPRE provide a really easy way to implement an in place AJAX-powered editor using WYSIWYG.
+Using the great libraries Prototype 1.6, Script.Aculo.Us 1.8 and TinyMCE 3.2, IPRE provide a really easy way to implement an in place AJAX-powered editor using WYSIWYG.
 
 h3. Tested on
 
