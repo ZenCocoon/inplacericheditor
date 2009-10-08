@@ -40,6 +40,15 @@
     </script>
     <p><a href="javascript:alert(tinyMCE.getInstanceById('tobeedited-textarea-inplacericheditor'));">Check object once loaded (needed to check ImageManager / FileManager)</a></p>
 
+    <p id="paragraphtobeedited">Paragraph to be edited,<br />with multiple lines</p>
+    <script>
+    // <![CDATA[
+      new Ajax.InPlaceRichEditor($('paragraphtobeedited'), '_ajax_inplacericheditor_result.html', {
+        ajaxOptions: {method: 'get'} //override so we can use a static for the result
+      });
+    // ]]>
+    </script>
+
     <h1 id="tobeeditedwithhtml">To be edited with <abbr title="HyperText Mark-Up Language">HTML</abbr></h1>
     <script>
     // <![CDATA[
