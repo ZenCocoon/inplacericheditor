@@ -84,29 +84,31 @@
           
           assertEqual("TEXTAREA", document.forms[0].firstChild.tagName);
           assertEqual("To be edited", document.forms[0].firstChild.value);
-          assertEqual("SPAN", document.forms[0].childNodes[1].tagName);
-          assertEqual("BR", document.forms[0].childNodes[2].tagName);
-          assertEqual("INPUT", document.forms[0].childNodes[3].tagName);
-          assertEqual("submit", document.forms[0].childNodes[3].type);
+          assertEqual("BR", document.forms[0].childNodes[1].tagName);
+          assertEqual("INPUT", document.forms[0].childNodes[2].tagName);
+          assertEqual("submit", document.forms[0].childNodes[2].type);
           assertEqual("To be edited", document.forms[0].firstChild.value);
           assert(Element.hasClassName(document.forms[0], 'inplacericheditor-form'),
             "form doesn't have proper class: " + document.forms[0].className);
-
-          assertEqual("[object Object]", tinyMCE.getInstanceById('tobeedited-textarea-inplacericheditor'))
           
-          Event.simulateMouse(document.forms[0].childNodes[3],'click');
           
-          assertVisible($('tobeedited'));
-          assertEqual("Saving...", $('tobeedited').innerHTML);
-          assertTransparent(Element.getStyle('tobeedited','background-color'));
-          assert(Element.hasClassName($('tobeedited'), 'inplacericheditor-saving'),
-            "doesn't have saving class");
-          
-          wait(1000, function() {
-            assertEqual("Server received: To be edited", $('tobeedited').innerHTML);
-            assertNull(document.forms[0]);
+          wait(500, function() {
+            assertEqual("[object Object]", tinyMCE.getInstanceById('tobeedited-textarea-inplacericheditor'));
+            
+            Event.simulateMouse(document.forms[0].childNodes[3],'click');
+            
             assertVisible($('tobeedited'));
-            assert(!Element.hasClassName($('tobeedited'), 'inplacericheditor-saving'));
+            assertEqual("Saving...", $('tobeedited').innerHTML);
+            assertTransparent(Element.getStyle('tobeedited','background-color'));
+            assert(Element.hasClassName($('tobeedited'), 'inplacericheditor-saving'),
+              "doesn't have saving class");
+              
+            wait(1000, function() {
+              assertEqual("Server received: To be edited", $('tobeedited').innerHTML);
+              assertNull(document.forms[0]);
+              assertVisible($('tobeedited'));
+              assert(!Element.hasClassName($('tobeedited'), 'inplacericheditor-saving'));
+            });
           });
         }},
 
