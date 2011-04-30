@@ -1,4 +1,4 @@
-// InPlaceRichEditor, version 1.3.2
+// InPlaceRichEditor, version 1.3.3
 // 
 // Author: Sebastien Grosjean (http://www.zencocoon.com, http://seb.box.re)
 //
