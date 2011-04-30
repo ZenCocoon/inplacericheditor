@@ -5,7 +5,7 @@
 // Contributor:
 //   Neil Rickards, Robert Muzslai, Andrew Petersen, Brian Hansen, Brian French,
 //   Dan Dalf, Anton Mostovoy, Hans-Peter, Filipe Pina, Min Kim, Rudi Boutinaud,
-//   Joaquin Miguez, E. Vrolijk - RedAnt Solutions, Tony Cuny, yasmary
+//   Joaquin Miguez, E. Vrolijk - RedAnt Solutions, Tony Cuny, yasmary, Bernd Binder
 //
 // InPlaceRichEditor is freely distributable under the terms of an MIT-style license.
 // For details, see the inPlaceRichEditor web site: http://inplacericheditor.box.re/
@@ -58,7 +58,7 @@ Ajax.InPlaceRichEditor = Class.create(Ajax.InPlaceEditor, {
       this.enterEditMode();
   },
   createControl: function($super, mode, handler, extraClasses) {
-    // if (!this.options.tinymceSave)
+    if (!this.options.tinymceSave)
       $super(mode, handler, extraClasses);
   },
   createEditField: function() {

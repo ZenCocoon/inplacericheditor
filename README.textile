@@ -6,4 +6,4 @@ Using the great libraries Prototype 1.7, Script.Aculo.Us 1.9.0 and TinyMCE 3.4.2
 
 h3. Tested on
 
-Firefox 3+, Internet Explorer 6+, Safari 4+ and Opera 10+
+Firefox 3+, Internet Explorer 6+, Safari 4+, Chrome 11+ and Opera 10+
